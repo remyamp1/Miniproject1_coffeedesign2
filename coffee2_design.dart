@@ -72,12 +72,14 @@ class Coffeedesign extends StatelessWidget{
                           borderRadius: BorderRadius.circular(10),color:const Color.fromARGB(221, 80, 78, 78)),
 
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Icon(Icons.currency_rupee,color: Colors.white),
                             
                             Text(Database.MyList[index]["price"],style: TextStyle(color: Colors.white),),
+                            Spacer(),
                             FloatingActionButton(onPressed: (){},child:Text("+")),
+                            
                             ],
                         ),
 
