@@ -1,3 +1,4 @@
+import 'package:coffee2_design/database.dart';
 import 'package:flutter/material.dart';
 class Coffeedesign extends StatelessWidget{
 
@@ -56,21 +57,26 @@ class Coffeedesign extends StatelessWidget{
                       Container(
                         height:100,
                         width:double.infinity,
-                        color:Colors.amber,
+                        decoration: BoxDecoration(image:DecorationImage(image: AssetImage(Database.MyList[index]["image"]),
+                        fit: BoxFit.cover)),
+                        
+                      
                       ),
                       SizedBox(height:5),
-                      Text("Cinnamon"),
+                      Text(Database.MyList[index]["name"],style: TextStyle(color: Colors.white),),
 
                       Container(
                         height:40,
                         width:double.infinity,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color:const Color.fromARGB(221, 104, 97, 97)),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),color:const Color.fromARGB(221, 80, 78, 78)),
 
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.currency_rupee),
-                            Text("price"),
+                            Icon(Icons.currency_rupee,color: Colors.white),
+                            
+                            Text(Database.MyList[index]["price"],style: TextStyle(color: Colors.white),),
                             FloatingActionButton(onPressed: (){},child:Text("+")),
                             ],
                         ),
